@@ -28,6 +28,7 @@ Component.override('sw-cms-el-config-youtube-video', {
     created() {
         this.createdComponent();
     },
+
     methods: {
         createdComponent() {
             this.initElementConfig('youtube-video');
@@ -82,6 +83,10 @@ Component.override('sw-cms-el-config-youtube-video', {
         onOpenMediaModal() {
             this.mediaModalIsOpen = true;
         },
+
+        loadPreviewImage() {
+            console.log('freibier', this.element.config.videoID.value);
+        }
     },
     computed: {
         mediaRepository() {
@@ -92,11 +97,8 @@ Component.override('sw-cms-el-config-youtube-video', {
         },
         previewImage() {
             if (this.element.data && this.element.data.previewImage && this.element.data.previewImage.id) {
-                console.log('jepp data');
-                console.log(this.element.data.previewImage);
                 return this.element.data.previewImage;
             }
-            console.log('jepp config');
             return this.element.config.previewImage.value;
         },
     },

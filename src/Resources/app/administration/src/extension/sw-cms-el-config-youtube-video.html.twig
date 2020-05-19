@@ -1,6 +1,10 @@
 {% block sw_cms_element_youtube_video_config_display_mode %}
     {% parent %}
 
+    <sw-button v-if="!previewImage" variant="primary" @click="loadPreviewImage">
+        Vorschaubild importieren
+    </sw-button>
+
     <sw-container columns="repeat(auto-fit, minmax(250px, 1fr)" gap="0px 30px">
         <sw-cms-mapping-field :label="$tc('sw-media.sidebar.sections.preview')" valueTypes="entity" entity="media" v-model="element.config.previewImage">
             <sw-media-upload-v2 variant="regular"
@@ -20,6 +24,7 @@
                 </sw-alert>
             </div>
         </sw-cms-mapping-field>
+
 
         <sw-media-modal-v2
             variant="regular"
