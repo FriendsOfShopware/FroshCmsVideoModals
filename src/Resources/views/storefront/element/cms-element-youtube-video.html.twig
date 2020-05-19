@@ -1,0 +1,19 @@
+{% sw_extends "@Storefront/storefront/element/cms-element-youtube-video.html.twig" %}
+
+{% block element_youtube_video_inner %}
+    {% if not config.autoPlay.value %}
+        {% set videoUrl = videoUrl ~ '&autoplay=1' %}
+    {% endif %}
+
+    {% set image = 'https://i.ytimg.com/vi/' ~ config.videoID.value ~ '/maxresdefault.jpg' %}
+    {% set url = path('frontend.videocontent.load', { 'url': videoUrl }) %}
+
+    <a href="https://www.youtube.com/watch?v={{ config.videoID.value }}" target="_blank"
+       data-toggle="modal"
+       data-url="{{ url }}"
+       data-modal-class="modal-big">
+        <div class="cms-element-youtube-video__video">
+            <img src="{{ image }}" alt="">
+        </div>
+    </a>
+{% endblock %}

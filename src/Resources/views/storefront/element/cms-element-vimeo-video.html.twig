@@ -1,0 +1,18 @@
+{% sw_extends "@Storefront/storefront/element/cms-element-vimeo-video.html.twig" %}
+
+{% block element_vimeo_video_inner %}
+    {{ parent() }}
+    {# TODO implement #}
+    {#{% set image = 'https://i.vimeocdn.com/filter/overlay?src0=https%3A%2F%2Fi.vimeocdn.com%2Fvideo%2F' ~ config.videoID.value ~ '_1280x654.jpg&src1=https%3A%2F%2Ff.vimeocdn.com%2Fimages_v6%2Fshare%2Fplay_icon_overlay.png' %}
+    {% set url = path('frontend.videocontent.load', { 'url': videoUrl }) %}
+
+    <a href="https://vimeo.com/{{ config.videoID.value }}" target="_blank"
+       data-toggle="modal"
+       data-url="{{ url }}"
+       data-modal-class="modal-big">
+        <div class="cms-element-vimeo-video__video">
+            <img src="{{ image }}" alt="">
+        </div>
+    </a>#}
+
+{% endblock %}

@@ -1,0 +1,32 @@
+{
+    "name": "frosh/cms-video-modals",
+    "description": "Remove video embeding",
+    "version": "0.0.1",
+    "type": "shopware-platform-plugin",
+    "license": "MIT",
+    "authors": [
+        {
+          "name": "FriendsOfShopware",
+          "homepage": "https://friendsofshopware.de"
+        }
+    ],
+    "require": {
+        "shopware/core": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Frosh\\CmsVideoModals\\": "src/"
+        }
+    },
+    "extra": {
+        "shopware-plugin-class": "Frosh\\CmsVideoModals\\FroshCmsVideoModals",
+        "label": {
+            "en-GB": "Modals für Videos",
+            "de-DE": "Modals for video"
+        },
+        "description": {
+            "en-GB": "Durch das Nutzen von Modals werden die Videos nichtmehr direkt geladen.",
+            "de-DE": "Remove embedding of videos in storefront using modals."
+        }
+    }
+}
