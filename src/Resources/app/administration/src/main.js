@@ -85,7 +85,7 @@ Component.override('sw-cms-el-config-youtube-video', {
         },
 
         loadPreviewImage() {
-            console.log('freibier', this.element.config.videoID.value);
+            console.log('TODO: ', 'import image from https://i.ytimg.com/vi/' + this.element.config.videoID.value + '/maxresdefault.jpg');
         }
     },
     computed: {
@@ -97,8 +97,10 @@ Component.override('sw-cms-el-config-youtube-video', {
         },
         previewImage() {
             if (this.element.data && this.element.data.previewImage && this.element.data.previewImage.id) {
+                console.log('previewImage', this.element.config.previewImage);
                 return this.element.data.previewImage;
             }
+            console.log('previewImage.value', this.element.config.previewImage.value);
             return this.element.config.previewImage.value;
         },
     },
